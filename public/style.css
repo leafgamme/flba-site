@@ -1,0 +1,506 @@
+body {
+    background-color: #f5f5f5;
+    font-family: monospace;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ebebeb;
+    line-height: 0.5;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 45%;
+    background-size: cover;
+    background: url("images/bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    outline: none;
+    padding: 48px 0 0;
+    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+    transition: all .2s ease-in-out;
+}
+
+.sidebar h1 {
+    text-align: center;
+    margin-top: 25%;
+}
+.sidebar h2 {
+    text-align: center;
+}
+
+.sidebar h3 {
+    text-align: center;
+    margin-top: 25%;
+}
+
+.job-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 25%;
+    margin-left: 60%;
+    margin-top: 5%;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    transition: all .5s ease-in-out;
+    opacity: 0;
+}
+
+.job {
+    margin-left: 2%;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    margin-right: 2%;
+    margin-bottom: 2%;
+    transition: all .2s ease-in-out;
+}
+
+.job h1 {
+    margin-bottom: 5px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job p {
+    margin-bottom: 5px;
+    margin-top: 2.5%;
+    font-size: 12px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.job h2{
+    font-size: medium;
+    font-weight: 100;
+    margin-bottom: 5%;
+    margin-right: 2%;
+    text-align: right;
+    color: #333;
+    margin-top: -5%;
+}
+
+.job .description {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 12px;
+    color: #333;
+    transition: all 0.5s ease-in-out;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .job .description.open {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  .job .description.measuring {
+    position: absolute;
+    visibility: hidden;
+    height: auto !important;
+    white-space: pre-wrap;
+  }
+
+.job .description h1 {
+    margin-top: 5%;
+    line-height: 20px;
+    text-align: center;
+    margin-left: 30%;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.job .description h2{
+    text-align: center;
+    margin-top: 5%;
+    line-height: 20px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.job:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .25);
+    transform: translateY(-5%);
+}
+
+
+.apply button {
+    background-color: #FFB3C8;
+    margin-left: 67%;
+    margin-top: 2.5%;
+    margin-bottom: -2.5%;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 12px;
+    width: 10%;
+    height: 5%;
+    transition: all .5s ease-in-out;
+    opacity: 0;
+}
+
+.apply button:hover {
+    background-color: #db8da3;
+    margin-left: 67%;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 12px;
+    width: 10%;
+    transform: scale(1.1);
+    height: 5%;
+    transition: all .5s ease-in-out;
+    opacity: 0;
+}
+
+.application-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 25%;
+    margin-left: 60%;
+    margin-top: 1%;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    transition: all .5s ease-in-out;
+    opacity: 0;
+}
+
+.application {
+    margin-left: 2%;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    margin-right: 2%;
+    margin-bottom: 2%;
+    transition: all .2s ease-in-out;
+}
+
+.application h2 {
+    color: #444;
+    font-size: 25px;
+    font-weight: 500px;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.application h1 {
+    margin-bottom: 5px;
+    margin-left: 5%;
+    font-size: 15px;
+    color: #333;
+    line-height: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.application input {
+    margin-bottom: 5px;
+    margin-top: 2.5%;
+    margin-right: 5%;
+    margin-left: 5%;
+    font-size: 12px;
+    width: 90%;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    border-bottom: 2px solid rgb(0,151,212);
+    transition: all .2s ease-in-out;
+}
+
+.application input:focus {
+    border-bottom: 2px solid rgb(0,151,212);
+    transform: scale(1.1);
+}
+
+.application select {
+    margin-bottom: 5px;
+    margin-top: 2.5%;
+    margin-right: 5%;
+    margin-left: 5%;
+    font-size: 12px;
+    width: 90%;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    border-bottom: 2px solid rgb(0,151,212);
+    transition: all .2s ease-in-out;
+}
+
+.application select:focus {
+    border-bottom: 2px solid rgb(0,151,212);
+    transform: scale(1.1);
+}
+
+.application button {
+    background-color: #FFB3C8;
+    margin-left: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 12px;
+    width: 50%;
+    height: 5%;
+    transition: all .5s ease-in-out;
+}
+.application button:hover {
+    background-color: #db8da3;
+    margin-left: 25%;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 12px;
+    width: 50%;
+    transform: scale(1.1);
+    height: 5%;
+    transition: all .5s ease-in-out;
+}
+
+.qna {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    flex-direction: column;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: #000;
+    width: 25%;
+    margin-left: 60%;
+    margin-top: 4%;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    transition: all .5s ease-in-out;
+    opacity: 0;
+}
+
+.qna h1 {
+    margin-top: 5%;
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+    line-height: 12px;
+}
+
+.qna h2 {
+    margin-bottom: 5%;
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+    line-height: 12px;
+}
+
+.qna .line {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+
+}
+
+.footer-box {
+    width: 65%;
+    height: 6vmax;
+    margin-left: 40%;
+    margin-top: 5%;
+    border-radius: 0px 5px 0px 0px;
+    color: white;
+}
+
+.footer-box .copyright {
+    text-align: center;
+    font-size: 25px;
+    color: #333;
+    line-height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-box .copyright h1 {
+    margin-top: 5%;
+    font-size: 15px;
+    color: #333;
+    line-height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* appliations css  */
+
+.app {
+    position: fixed;
+    margin-top: 8%;
+    margin-left: 20%;
+    height: auto;
+    width: 35%;
+    outline: none;
+    transition: all .2s ease-in-out;
+}
+
+.app-box {
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    margin: auto 0;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-in-out;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 10%;
+}
+
+
+.app-box h2 {
+    margin-top: 5%;
+    color: #444;
+    font-size: 15px;
+    font-weight: 500px;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.app-box h1 {
+    padding: 5%;
+    margin-top: 5%;
+    margin-bottom: 5px;
+    font-size: 25px;
+    color: #333;
+    text-align: center;
+}
+
+.app-box h3 {
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+    line-height: 20px;
+    margin-bottom: 5%;
+    background-color: #efefef;
+    border-radius: 5px;
+}
+
+.app-box .line {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+
+}
+
+/* all applications css */
+
+/* make some css that has a flex display that can be used to show all the applications */
+
+.all-applications {
+    position: fixed;
+    margin-top: 8%;
+    margin-left: 20%;
+    height: auto;
+    width: 35%;
+    outline: none;
+    transition: all .2s ease-in-out;
+}
+
+.all-applications-box {
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+    margin: auto 0;
+    width: 100%;
+    height: 100%;
+    transition: all .2s ease-in-out;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 10%;
+}
+
+.all-applications-box .single-application h2 {
+    padding: auto;
+    margin-top: 5%;
+    color: #444;
+    font-size: 15px;
+    font-weight: 500px;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.all-applications-box .single-application h1 {
+    padding: 10px;
+    margin-top: 2%;
+    margin-bottom: 5px;
+    font-size: 25px;
+    color: #333;
+    text-align: center;
+}
+
+.all-applications-box .single-application h3 {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.all-applications-box .single-application {
+    margin-bottom: 5px;
+    font-size: 15px;
+    color: #333;
+    text-align: center;
+}
+
+.line {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+
+}

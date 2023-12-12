@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="index,follow"/>
+        <meta name="description" content="FBLA Project Submission for 2023.">
+        <meta name="og:title" content="<%= name %>'s Application | Nameless">
+        <meta name="og:description" content="FBLA Project Submission for 2023.">
+        <meta name="og:image" content="/images/bg_not_found.png">
+        <meta name="theme-color" content="#eb45fa">
+        <meta property="og:image:alt" content="Image Not Found.">
+        <meta property="og:type" content="website">
+        <meta property="og:image:width" content="540"/>
+        <meta property="og:image:height" content="360"/>
+        <meta property="twitter:card" content="summary_large_image"/>
+        <style>
+            .app {
+                position: relative;
+                margin: 8% auto 0;
+                width: 90%;
+                max-width: 600px;
+                outline: none;
+                transition: all .2s ease-in-out;
+            }
+
+            .app-box {
+                background-color: #fff;
+                box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+                margin: 10% auto;
+                width: 90%;
+                max-width: 600px;
+                height: auto;
+                transition: all .2s ease-in-out;
+                border-radius: 10px;
+                padding: 20px;
+            }
+
+            .app-box h2 {
+                margin-top: 20px;
+                color: #444;
+                font-size: 18px;
+                font-weight: 500;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .app-box h1 {
+                margin-top: 20px;
+                margin-bottom: 10px;
+                font-size: 30px;
+                color: #333;
+                text-align: center;
+            }
+
+            .app-box h3 {
+                font-size: 16px;
+                color: #333;
+                text-align: center;
+                line-height: 1.5;
+                margin-bottom: 20px;
+                background-color: #efefef;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            .app-box .line {
+                border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="app">
+            <div class="app-box">
+                <h1><%= name %>'s Application</h1>
+                <h2>What is your name?</h2>
+                <h3><%= name %></h3>
+                <span class="line"></span>
+                <h2>What is your age?</h2>
+                <h3><%= age %></h3>
+                <span class="line"></span>
+                <h2>What is your Phone Number?</h2>
+                <h3><%= phone %></h3>
+                <span class="line"></span>
+                <h2>What is your email?</h2>
+                <h3><%= email %></h3>
+                <span class="line"></span>
+                <h2>What is your Portfolio?</h2>
+                <h3><%= portfolio %></h3>
+                <span class="line"></span>
+                <h2>What Position do you want?</h2>
+                <h3><%= position %></h3>
+                <span class="line"></span>
+                <h2>Why should we pick you over other people.</h2>
+                <h3><%= reason %></h3>
+            </div>
+        </div>
+    </body>
+</html>

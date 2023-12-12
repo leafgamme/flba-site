@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications</title>
+    <style>
+        html {
+            height: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            overflow-y: scroll;
+        }
+
+        .all-applications {
+            margin-top: 8%;
+            margin-bottom: 8%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .all-applications-box {
+            background-color: #fff;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .15);
+            width: 35%;
+            height: 100%;
+            transition: all .2s ease-in-out;
+        }
+
+        .all-applications-box .single-application h1 {
+            margin-top: 2%;
+            margin-bottom: 5px;
+            font-size: 25px;
+            color: #333;
+            text-align: center;
+        }
+
+        .all-applications-box .single-application h3 {
+            margin-bottom: 5px;
+            font-size: 15px;
+            color: #333;
+            text-align: center;
+        }
+
+        .all-applications-box .single-application {
+            margin-bottom: 5px;
+            font-size: 15px;
+            color: #333;
+            text-align: center;
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+        }
+
+        .all-applications-box .single-application:hover {
+            background-color: #f5f5f5;
+        }
+
+        .line {
+            border-bottom: 3px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .refresh-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .delete-button {
+            background-color: #f44336;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .accept-button {
+            background-color: #2196F3;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="all-applications">
+        <div class="all-applications-box" id="apps">
+            <button class="refresh-button" onclick="refresh()">Refresh</button>
+            <div class="line"></div>
+            
+        </div>
+    </div>
+
+    <script>
+        async function refresh() {
+            const apps = document.getElementById("apps");
+            apps.innerHTML = `
+                <button class="refresh-button" onclick="refresh()">Refresh</button>
+                <div class="line"></div>
+                <div class="single-application">
+                    <h1>Refreshing Application Database</h1>
+                    <h3>Please wait a couple of seconds..</h3>
+                </div>
+                <div class="line"></div>
+            `;
+            setTimeout(() => {
+                loadApplications();
+            }, 1000);
+        }
+
+        async function loadApplications() {
+            const apps = document.getElementById("apps");
+            const applications = await fetch("/apps")
+                .then(res => res.json())
+                .then(json => {
+                    if (Object.keys(json).length == 0) {
+                        apps.innerHTML = `
+                            <button class="refresh-button" onclick="refresh()">Refresh</button>
+                            <div class="line"></div>
+                            <div class="single-application">
+                                <h1>No Applications</h1>
+                                <h3>There are no applications yet.</h3>
+                            </div>
+                            <div class="line"></div>
+                        `;
+                        return;
+                    }
+                    Object.keys(json).forEach(key => {
+                        setTimeout(() => {
+                            const string = `
+                            <div class="single-application" id="${key}">
+                                <h1>${json[key].name}</h1>
+                                <h3>${key}</h3>
+                                <div class="buttons">
+                                    <button class="delete-button" style="display: none" onclick="deleteApplication(${key})">Delete</button>
+                                    <button class="accept-button" style="display: none">Accept</button>
+                                </div>
+                            </div>
+                            <div class="line"></div>
+                        `
+
+                            
+
+                            apps.innerHTML += string;
+                            apps.innerHTML = apps.innerHTML.replace(/<div class="(single-application|line)">[\s\S]*?<\/div>/g, "");
+                            addListener(key);
+                        }, 1000);
+                    });
+                });
+        }
+
+        async function addListener(id) {
+            const applications = await fetch("/apps")
+                .then(res => res.json())
+                .then(json => {
+                    Object.keys(json).forEach(key => {
+                        const app = document.getElementById(key);
+                        const deleteButton = app.querySelector(".delete-button");
+                        const acceptButton = app.querySelector(".accept-button");
+                        acceptButton.addEventListener("click", () => {
+                            console.log("Accept button clicked for " + key);
+                        });
+
+                        app.addEventListener("click", () => {
+                            if (event.target.tagName == "BUTTON") return;
+                            window.location.href = "/applications/" + key;
+                        });
+                        app.addEventListener("mouseover", () => {
+                            deleteButton.style.display = "inline-block";
+                            acceptButton.style.display = "inline-block";
+                        });
+                        app.addEventListener("mouseout", () => {
+                            deleteButton.style.display = "none";
+                            acceptButton.style.display = "none";
+                        });
+                    });
+                });
+        }
+
+
+        function deleteApplication(key) {
+            console.log("Delete button clicked for " + key);
+                            fetch("/applications/delete/" + key)
+                                .then(() => { refresh() })
+        }
+
+        function acceptApplication(key) {
+            console.log("Accept button clicked for " + key);
+                            fetch("/applications/accept/" + key)
+                                .then(() => { refresh() })
+        }
+
+        loadApplications();
+    </script>
+</body>
+
+</html>

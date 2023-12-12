@@ -1,0 +1,265 @@
+body {
+    background-color: #f5f5f5;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: black;
+    line-height: 0.5;
+    padding: 30px;
+    overflow: auto;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+.jobs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.jobs h1 {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.jobs h2 {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.jobs button {
+    background-color: #FFB3C8;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.jobs .info {
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 12px;
+    color: #333;
+    transition: all 0.5s ease-in-out;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .jobs .info button {
+    background-color: #FFB3C8;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .jobs .info p {
+    font-size: 10px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    line-height: 15px;
+  }
+  
+  .job .info.open {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    height: 400px;
+    overflow: show;
+  }
+  
+  .job .info.measuring {
+    position: absolute;
+    visibility: hidden;
+    height: 500px !important;
+    white-space: pre-wrap;
+  }
+
+  .ripple {
+    background-position: center;
+    transition: background 0.8s;
+  }
+  .ripple:hover {
+    background: #e69db1 radial-gradient(circle, transparent 1%, #e69db1 1%) center/15000%;
+  }
+  .ripple:active {
+    background-color: #e69db1;
+    background-size: 100%;
+    transition: background 0s;
+  }
+
+
+.application {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 100%;
+    z-index: 2;
+    overflow-x: hidden;
+}
+
+.application h1 {
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 22px;
+    z-index: 2;
+}
+
+.application h2 {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    line-height: 16px;
+    z-index: 2;
+}
+
+.application button {
+  background-color: #FFB3C8;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.application button:hover {
+  background-color: #e69db1;
+  color: #fff;
+}
+
+.application select {
+  background-color: #e5e5e5;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.application button.next {
+  display: block;
+  margin: 0 auto;
+}
+
+.application input[type="text"], .application input[type="email"], .application input[type="tel"], .application input[type="number"] {
+  background-color: #e5e5e5;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 10px 0;
+  cursor: text;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.application input[type="text"]:focus, .application input[type="email"]:focus, .application input[type="tel"]:focus, .application input[type="number"]:focus {
+  outline: none;
+  box-shadow: 0 0 5px #FFB3C8;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  background-color: #f2f2f2;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 100%;
+  z-index: 2;
+  overflow-x: hidden;
+}
+
+.questions p {
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 17px;
+  z-index: 2;
+}
+
+.questions button {
+  background-color: #FFB3C8;
+  border: none;
+  color: #000;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.questions button:hover {
+  background-color: #e69db1;
+  color: #fff;
+}

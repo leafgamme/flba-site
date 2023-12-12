@@ -1,0 +1,298 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: #d9d9d9;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+a {
+  color: #4ba3ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
+}
+
+button {
+  background-color: #4ba3ff;
+  border: none;
+  border-radius: 25px;
+  color: #d9d9d9;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #1f6feb;
+}
+
+/* Layout Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+header {
+  background-color: #2b2b2b;
+  border-bottom: 1px solid #4ba3ff;
+  color: #d9d9d9;
+  padding: 1rem 0;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+header ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+header ul li {
+  margin-right: 2rem;
+}
+
+header ul li a {
+  color: #d9d9d9;
+  text-decoration: none;
+  font-size: 1.125rem;
+  transition: color 0.3s ease-in-out;
+}
+
+header ul li a:hover {
+  color: #4ba3ff;
+}
+
+/* Hero Section */
+
+.hero {
+  background-image: url('https://www.webfx.com/blog/images/assets/images.sixrevisions.com/2009/09/20-03_space_scene_final_version01_full.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+
+.hero-content {
+  margin-left: 2rem;
+  justify-content: flex-start;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(0, 236,221);
+  text-shadow: -3px 0 #2b2b2b, 0 3px #2b2b2b, 3px 0 #2b2b2b, 0 -3px #2b2b2b;
+}
+
+.hero p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: -1.5px 0 #2b2b2b, 0 1.5px #2b2b2b, 1.5px 0 #2b2b2b, 0 -1.5px #2b2b2b;
+  color: rgb(0, 236,221);
+}
+
+.hero button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+  background-color: #4ba3ff;
+  border: none;
+  border-radius: 55px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: #3886d6;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero-content {
+    margin: 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+}
+
+/* About Section */
+
+.about-section {
+  background-color: #1e1e1e;
+  padding: 50px;
+}
+
+.about-section h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-section p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.about-section img {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+
+/* test */
+.items {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 30px;
+}
+
+
+.card {
+	 border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.76);
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  position: relative;
+  overflow:hidden;
+  transition: all 0.3s ease;
+  width: 30vw;
+}
+.card > span {
+	display: inline-block;
+	position: relative;
+	background-color: yellow;
+	width: 100%;
+	height: 5px;
+}
+
+.card > span .java {
+	display: inline-block;
+	position: relative;
+	background-color: rgb(176,114,25);
+	width: 100%;
+	height: 5px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.elements {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+}
+.elements > p {
+	color: white;
+	text-align: center;
+}
+.elements > h1 {
+	color: white;
+  text-align: center;
+	margin: 0;
+}
+.elements button {
+	background-color: #4ba3ff;
+	color: white;
+	font-weight: bold;
+  padding: 0.5rem 1rem;
+	font-size: 1.5rem;
+	border-radius: 5px;
+}
+
+.elements button:hover {
+  background-color: #1f6feb;
+}
+
+.element-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 20px;
+}
+
+/* Projects Section */
+
+.footer {
+  background-color: #2b2b2b;
+  border-top: 1px solid #4ba3ff;
+  color: #d9d9d9;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 2rem;
+}

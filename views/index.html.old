@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Leaf's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script href="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Leaf</h1>
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+            <h1>Welcome to my portfolio</h1>
+            <p>My name is Aaron and I'm a Java and JavaScript Developer!</p>
+            <button onClick="window.open('https://discord.gg/PNsvnvukKK', '_blank');">Discord</button>
+            <button onClick="window.open('https://twitter.com/leefytee/', '_blank');">Twitter</button>
+            <button onClick="window.open('https://github.com/LeafDevs/', '_blank');">Github</button>
+        </div>
+      </div>
+    </section>
+    
+    <section class="about-section" id="about">
+      <h2>About Me</h2>
+      <p>Hi, my name is Aaron and I love doing anything related to computers, Let that be coding discord bots, Minecraft Plugins, Websites or anything Graphic Design related.</p>
+      <p>In my freetime I love to hang out with friends, play video games, or watch anime. I love seafood and burgers.</p>
+      <p>I started coding when I was 10 year olds and have been doing it for 6 years as of now. I first started learning Lua, 3 years later I started learning Python, Javascript and Java. I enjoy making minecraft plugins, and discord bots when I have time.  I hope in the near future I can get a job as someone who codes video games for a living.</p>
+    </section>
+
+
+    <h2 style="text-align:center; font-size: 2em; margin-bottom: 25px;">Projects</h2>
+    <div class="items">
+      
+      <div class="card" id="projects">
+        <div class="elements">
+          <h1>Leaf's MobAPI</h1>
+          <p>A Minecraft Plugin (1.8) for creating custom mobs with ease within a yml file. You can give the mob custom health, damage, attack rate, reach, accuracy etc. and even give them custom armors, weapons or items.</p>
+          <div class="element-buttons">
+            <button style="border-radius: 50px;" onClick="window.open('https://github.com/leafdevs/mobapi', '_blank')">GitHub</button>
+            <button style="border-radius: 50px;" onClick="window.open('https://www.spigotmc.org/resources/leafs-mob-api.108711/', '_blank')">SpigotMC</button>
+          </div>
+        </div>
+        <span style="background-color: rgb(176,114,25);"></span>
+      </div>
+      <div class="card">
+        <div class="elements">
+          <h1>Hypixel Banwave Checker</h1>
+          <p>A Discord bot that checks hypixel's ban count and give an accurate amount of bans per 15 minutes and tells you if a banwave is happening or not.</p>
+          <div class="element-buttons">
+            <button style="border-radius: 50px;" onClick="window.open('https://github.com/leafdevs/BanwaveChecker', '_blank')">GitHub</button>
+          </div>
+        </div>
+        <span></span>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2023 leafytea.host. All rights reserved.</p>
+      </div>
+    </footer>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
+
